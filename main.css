@@ -150,6 +150,29 @@ ul, li {
 .main-nav .parent li.active a, .main-nav .parent li:hover a {
     color: #b52759;
 }
+
+.main_wrapper li .active {
+    border-bottom: 4px solid #308D46;
+    color: #308D46;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.main_wrapper li a {
+    color: black;
+    font-size: 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.main_wrapper li {
+    padding: 10px 30px 0;
+    list-style: none;
+    cursor: pointer;
+    margin: 0 0 0 0 !important;
+}
+
 .main-nav .parent li a {
     padding: 16.5px 0;
     display: block;
@@ -916,7 +939,8 @@ figure{
 .main-nav .parent li a{
     padding:16.5px 0;
     display:block;
-    white-space:nowrap
+    white-space:nowrap;
+    text-decoration:none;
 }
 .main-nav .parent li:hover .sub{
     opacity:1;
@@ -925,8 +949,21 @@ figure{
     border-top:1px solid #9f224e
 }
 .main-nav .parent li.active a,.main-nav .parent li:hover a{
-    color:#b52759
+    color:#b52759;
 }
+
+#home:hover a{
+    color:white;
+}
+
+.main-nav li .active {
+    border-bottom: 4px solid #308D46;
+    color: #308D46;
+    bottom: 0px;
+    width: 100%;
+    border-radius: 3px;
+}
+
 .main-nav .parent li.kinhdoanh:hover a,.main-nav .parent li.kinhdoanh.active a{
     color:#065e9d
 }
