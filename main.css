@@ -3930,7 +3930,7 @@ img:not([src]):not([srcset]){
 }
 
 .footer .section {
-    padding: 50px 0;
+    padding: 20px 0;
     background-color: #1c1b1b;
 }
 .item-row {
