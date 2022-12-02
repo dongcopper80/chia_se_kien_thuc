@@ -3979,3 +3979,15 @@ img:not([src]):not([srcset]){
     white-space: nowrap;
     border-width: 0;
 }
+.footer .footer-bottom {
+    border-top: 1px solid #333;
+}
+.flex-column {
+    flex-direction: column!important;
+}
+.text-lg-left {
+    text-align: left!important;
+}
+.text-lg-right {
+    text-align: right!important;
+}
