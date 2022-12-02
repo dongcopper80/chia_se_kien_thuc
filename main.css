@@ -3941,7 +3941,7 @@ img:not([src]):not([srcset]){
 }
 
 .wrap-main-content{
-    min-height: 450px;
+    height: 450px;
 }
 
 .footer .block {
