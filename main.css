@@ -16,6 +16,12 @@
         margin-right: 10px;
     }
 }
+.main-content{
+    padding:110px 80px 0px 80px;
+}
+.main-content-details{
+    padding: 20px;
+}
 .section {
     width: 100%;
     float: left;
