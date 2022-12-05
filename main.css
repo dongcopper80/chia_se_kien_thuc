@@ -20,17 +20,51 @@
     width: 100%;
     float: left;
 }
-.top-header {
-    padding: 8.5px 0;
-    border-bottom: 1px solid #e5e5e5;
-    background-color: #343a40;
+.container.fter {
+/*    background: rgba(130, 155, 179, 0.14902);*/
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
+.wrapper {
+    max-width: 1180px !important;
+}
+.wrapper.hotrofooter {
+    padding: 0px;
+}
+.widget:last-child {
+    border-bottom: medium none;
+}
+.hotrofooter .widget {
+    margin-bottom: 0;
+}
+.textwidget {
+    margin: 0;
+}
+.hotrofooter h4 {
+    font-size: 26px;
+    margin: 15px;
+    line-height: 45px;
+}
+.hotrofooter .widget p {
+    margin-bottom: 35px;
+}
+.top-header {
+    padding: 3.5px 0;
+    border-bottom: 1px solid #e5e5e5;
+    /*    background-color: #343a40;*/
+    height: 55px;
+    background-color: rgb(53, 65, 72);
+}
+
 .container {
     width: 100%;
     max-width: 1130px;
     padding: 0 15px;
     margin: 0 auto;
     position: relative;
+}
+.footer-disclaimer{
+    color: white;
 }
 .wrap-main-nav {
     background: #fff;
@@ -3958,7 +3992,7 @@ img:not([src]):not([srcset]){
     margin-bottom:15px
 }
 
-.footer {
+.footer .top-header{
     background-color: #1c1b1b;
     color: #aaa;
     font-size: 16px;
@@ -3966,7 +4000,7 @@ img:not([src]):not([srcset]){
     border-top: 1px solid #333;
 }
 
-.footer .section {
+.footer .section, .top-header .section{
     padding: 20px 0;
     background-color: #1c1b1b;
 }
@@ -3989,18 +4023,18 @@ img:not([src]):not([srcset]){
 .block {
     display: block !important;
 }
-.footer ul.social-icons {
+.footer ul.social-icons, .top-header ul.social-icons {
     display: inline-flex;
     align-items: center;
     margin: 0 0 30px 0;
 }
-.footer ul.social-icons li:not(:last-child) {
+.footer ul.social-icons li:not(:last-child), .top-header  ul.social-icons li:not(:last-child){
     margin: 0 15px 0 0;
 }
-.footer ul.social-icons li {
+.footer ul.social-icons li ,.top-header ul.social-icons li{
     filter: invert(1);
 }
-.footer a {
+.footer a, .top-header a {
     color: #888;
     font-size: 16px;
     font-weight: 400;
@@ -4027,4 +4061,7 @@ img:not([src]):not([srcset]){
 }
 .text-lg-right {
     text-align: right!important;
+}
+.about-us{
+    display: inline-flex;
 }
