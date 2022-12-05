@@ -128,7 +128,7 @@
                         <a title="Java" href="java.html"> Java </a>
                     </li>
                     <li class="springboot">
-                        <a href="../springboot/index.html" title="Java Springboot" href="springboot"> Java Springboot</a>
+                        <a href="./index.html" title="Java Springboot" href="springboot"> Java Springboot</a>
                     </li>
                     <li class="netcore">
                         <a title=".net core" href="netcore"> .NET core </a>
@@ -149,7 +149,7 @@
                         <a title="MySQL" href="mysql"> MySQL </a>
                     </li>
                     <li class="others">
-                        <a title="Others" href="index.html"> Others </a>
+                        <a title="Others" href="../others/index.html"> Others </a>
                     </li>
                     <li class="all-menu has_transition">
                         <a href="javascript:;">All <span class="hamburger"></span></a>
@@ -160,17 +160,40 @@
 
         <div id="center_content" class="wrap-main-content main-content">
             <div class="main-content-details">
-                <p>Normally, <b>.m2</b> or <b>.gradle</b> located in <b>C:\Users\{username}</b> folder. </p>
-                <p>
-                    <img src="./change-maven-or-gradle-respository-local-folder-1.png"/>
-                </p>
-                <p>
-                    But my problem is that if I leave this folder here, it will lead to an unexpected full C drive.
-                    That is why it is necessary to specify another drive to place the <b>.m2</b> or <b>.gradle</b> folder
-                </p>
-                <p>
-                    
-                </p>
+
+                <h2>Core Spring Framework Annotations</h2>
+                <p><strong>@Required:</strong> It applies to the <strong>bean</strong> setter method. It indicates that the annotated bean must be populated at configuration time with the required property, else it throws an exception <strong>BeanInitilizationException</strong>.</p>
+                <p><strong>@Autowired:</strong> Spring provides annotation-based auto-wiring by providing @Autowired annotation. It is used to autowire spring bean on setter methods, instance variable, and constructor. When we use @Autowired annotation, the spring container auto-wires the bean by matching data-type.</p>
+                <p><strong>@Configuration:</strong> It is a class-level annotation. The class annotated with @Configuration used by Spring Containers as a source of bean definitions.</p>
+                <p><strong>@ComponentScan:</strong> It is used when we want to scan a package for beans. It is used with the annotation @Configuration. We can also specify the base packages to scan for Spring Components.</p>
+                <p><strong>@Bean:</strong> It is a method-level annotation. It is an alternative of XML &lt;bean&gt; tag. It tells the method to produce a bean to be managed by Spring Container.</p>
+                <h2>Spring Framework Stereotype Annotations</h2>
+                <p><strong>@Component:</strong> It is a class-level annotation. It is used to mark a Java class as a bean. A Java class annotated with <strong>@Component</strong> is found during the classpath. The Spring Framework pick it up and configure it in the application context as a <strong>Spring Bean</strong>. </p>
+                <p><strong>@Controller:</strong> The @Controller is a class-level annotation. It is a specialization of <strong>@Component</strong>. It marks a class as a web request handler. It is often used to serve web pages. By default, it returns a string that indicates which route to redirect. It is mostly used with <strong>@RequestMapping</strong> annotation.</p>
+                <p><strong>@Service:</strong> It is also used at class level. It tells the Spring that class contains the <strong>business logic</strong>.</p>
+                <p><strong>@Repository:</strong> It is a class-level annotation. The repository is a <strong>DAOs</strong> (Data Access Object) that access the database directly. The repository does all the operations related to the database.</p>
+                <h2>Spring Boot Annotations</h2>
+                <ul>
+                    <li><strong>@EnableAutoConfiguration:</strong> It auto-configures the bean that is present in the classpath and configures it to run the methods. The use of this annotation is reduced in Spring Boot 1.2.0 release because developers provided an alternative of the annotation, i.e. <strong>@SpringBootApplication</strong>.</li>
+                    <li><strong>@SpringBootApplication:</strong> It is a combination of three annotations <strong>@EnableAutoConfiguration, @ComponentScan,</strong> and <strong>@Configuration</strong>.</li>
+                </ul>
+                <h3>Spring MVC and REST Annotations</h3>
+                <ul>
+                    <li><strong>@RequestMapping:</strong> It is used to map the <strong>web requests</strong>. It has many optional elements like <strong>consumes, header, method, name, params, path, produces</strong>, and <strong>value</strong>. We use it with the class as well as the method.</li>
+                    <li><strong>@GetMapping:</strong> It maps the <strong>HTTP GET</strong> requests on the specific handler method. It is used to create a web service endpoint that <strong>fetches</strong> It is used instead of using: <strong>@RequestMapping(method = RequestMethod.GET)</strong></li>
+                    <li><strong>@PostMapping:</strong> It maps the <strong>HTTP POST </strong>requests on the specific handler method. It is used to create a web service endpoint that <strong>creates</strong> It is used instead of using: <strong>@RequestMapping(method = RequestMethod.POST)</strong></li>
+                    <li><strong>@PutMapping:</strong> It maps the <strong>HTTP PUT</strong> requests on the specific handler method. It is used to create a web service endpoint that <strong>creates</strong> or <strong>updates</strong> It is used instead of using: <strong>@RequestMapping(method = RequestMethod.PUT)</strong></li>
+                    <li><strong>@DeleteMapping:</strong> It maps the <strong>HTTP DELETE</strong> requests on the specific handler method. It is used to create a web service endpoint that <strong>deletes </strong>a resource. It is used instead of using: <strong>@RequestMapping(method = RequestMethod.DELETE)</strong></li>
+                    <li><strong>@PatchMapping:</strong> It maps the <strong>HTTP PATCH </strong>requests on the specific handler method. It is used instead of using: <strong>@RequestMapping(method = RequestMethod.PATCH)</strong></li>
+                    <li><strong>@RequestBody:</strong> It is used to <strong>bind</strong> HTTP request with an object in a method parameter. Internally it uses <strong>HTTP MessageConverters</strong> to convert the body of the request. When we annotate a method parameter with <strong>@RequestBody,</strong> the Spring framework binds the incoming HTTP request body to that parameter.</li>
+                    <li><strong>@ResponseBody:</strong> It binds the method return value to the response body. It tells the Spring Boot Framework to serialize a return an object into JSON and XML format.</li>
+                    <li><strong>@PathVariable:</strong> It is used to extract the values from the URI. It is most suitable for the RESTful web service, where the URL contains a path variable.&nbsp;We can define multiple @PathVariable in a method.</li>
+                    <li><strong>@RequestParam:</strong> It is used to extract the query parameters form the URL. It is also known as a <strong>query parameter</strong>. It is most suitable for web applications. It can specify default values if the query parameter is not present in the URL.</li>
+                    <li><strong>@RequestHeader:</strong> It is used to get the details about the HTTP request headers. We use this annotation as a <strong>method parameter</strong>. The optional elements of the annotation are <strong>name, required, value, defaultValue. </strong>For each detail in the header, we should specify separate annotations. We can use it multiple time in a method</li>
+                    <li><strong>@RestController:</strong> It can be considered as a combination of <strong>@Controller</strong> and <strong>@ResponseBody </strong>annotations<strong>.</strong> The @RestController annotation is itself annotated with the @ResponseBody annotation. It eliminates the need for annotating each method with @ResponseBody.</li>
+                    <li><strong>@RequestAttribute:</strong> It binds a method parameter to request attribute. It provides convenient access to the request attributes from a controller method. With the help of @RequestAttribute annotation, we can access objects that are populated on the server-side.</li>
+                </ul>
+
             </div>
         </div>
 
