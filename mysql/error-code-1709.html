@@ -125,7 +125,7 @@
                         </a>
                     </li>
                     <li class="java">
-                        <a title="Java" href="./index.html"> Java </a>
+                        <a title="Java" href="../java/index.html"> Java </a>
                     </li>
                     <li class="springboot">
                         <a href="../springboot/index.html" title="Java Springboot" href="springboot"> Java Springboot</a>
@@ -146,7 +146,7 @@
                         <a title="MongoDB" href="mongodb"> MongoDB </a>
                     </li>
                     <li class="MySQL">
-                        <a title="MySQL" href="../mysql/index.html"> MySQL </a>
+                        <a title="MySQL" href="./index.html"> MySQL </a>
                     </li>
                     <li class="others">
                         <a title="Others" href="../others/index.html"> Others </a>
@@ -159,9 +159,33 @@
         </section>
 
         <div id="center_content" class="wrap-main-content main-content">
-            <ol class="toc-list" role="list">
-                
-            </ol>
+            <div class="main-content-details">
+                <p>
+                    When you create index in MySQL table and have the message :
+                    <br/>
+                    <code>
+                        Error Code: 1709. Index column size too large. The maximum column size is 767 bytes.
+                    </code>
+                    <br/>
+                    It's because the default <code>innodb-default-row-format</code> in MySQL is <code>compact</code>.
+                    <br/>
+                    Reference : <a href="https://dev.mysql.com/doc/refman/5.6/en/innodb-row-format.html">InnoDB Row Formats</a>
+                </p>
+                <p>
+                    To fix Error Code: 1709, you can edit file <code>my.ini</code> or <code>my.cnf</code> and comment out line:
+                    <br/>
+                    <code>#innodb-default-row-format=compact</code>
+                    <br/>
+                    and add this line 
+                    <br/>
+                    <code>innodb-default-row-format=dynamic</code>
+                    <br>
+                    After edit file, you save and restart MySQL to apply this change .
+                </p>
+                <p>
+                    It's done !!!!!!!!!!!!!!!!! This problem is solved.
+                </p>
+            </div>
         </div>
 
         <a href="javascript:;" class="up-btn" title="Lên đầu trang">
