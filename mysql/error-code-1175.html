@@ -159,18 +159,29 @@
         </section>
 
         <div id="center_content" class="wrap-main-content main-content">
-            <ol class="toc-list" role="list">
-                <li>
-                    <a href="./error-code-1709.html">
-                        <span class="title">Error Code: 1709. Index column size too large </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./error-code-1175.html">
-                        <span class="title">Error Code: 1175. You are using safe update mode ... </span>
-                    </a>
-                </li>
-            </ol>
+            <div class="main-content-details">
+                <p>
+                    When you run sql command like in MySQL:
+                    <br/> 
+                    <code>DELETE FROM `sys_role` ;</code>
+                    <br/>
+                    you can get error:
+                    <br/>
+                    <code>DELETE FROM `sys_role`	Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.</code>
+                    <br/>
+                    To solved this error you can run this block 
+                    <br/>
+                    <code>
+                        SET SQL_SAFE_UPDATES = 0;<br/>
+                        DELETE FROM `sys_role`;<br/>
+                        SET SQL_SAFE_UPDATES = 1;
+                    </code>
+                </p>
+                
+                <p>
+                    It's done !!!!!!!!!!!!!!!!! This problem is solved.
+                </p>
+            </div>
         </div>
 
         <a href="javascript:;" class="up-btn" title="Lên đầu trang">
@@ -182,3 +193,4 @@
     </body>
 
 </html>
+
