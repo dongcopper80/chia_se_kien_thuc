@@ -159,23 +159,44 @@
         </section>
 
         <div id="center_content" class="wrap-main-content main-content">
-            <ol class="toc-list" role="list">
-                <li>
-                    <a href="./error-code-1701.html">
-                        <span class="title">Error Code: 1701. Cannot truncate a table referenced ... </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./error-code-1709.html">
-                        <span class="title">Error Code: 1709. Index column size too large </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="./error-code-1175.html">
-                        <span class="title">Error Code: 1175. You are using safe update mode ... </span>
-                    </a>
-                </li>
-            </ol>
+            <div class="main-content-details">
+                <p>
+                    When you run MySQL script like :
+                    <br/>
+                    <code>TRUNCATE `sys_role`;</code>
+                    <br/>
+                    If table <code>`sys_role`</code> have referenced constraint with others table then you get error:
+                    <br/>
+                    <code>
+                        TRUNCATE `sys_role`	Error Code: 1701. Cannot truncate a table referenced in a foreign key constraint (`goingo.com`.`sys_role_auth`, CONSTRAINT `FK8cdtxc5xi6h8lbah6bx0aikfi`)
+                    </code>
+                </p>
+                <p>
+                    In this case you have 2 options:<br/>
+
+                    <strong>Option 1:</strong>
+<br/>
+                <ol>
+                    <li>1. Remove constraints</li>
+                    <li>2. Perform <code>TRUNCATE</code></li>
+                    <li>3. Delete manually the rows that now have references to <strong>nowhere</strong></li>
+                    <li>4. Create constraints</li>
+                </ol>
+                <br/>
+                <strong>Option 2:</strong>
+                <br/>
+                You can run this script block
+                <br/>
+                <code>
+                    SET FOREIGN_KEY_CHECKS = 0;<br/>
+                    TRUNCATE sys_role;<br/>
+                    SET FOREIGN_KEY_CHECKS = 1;
+                </code>
+                </p>
+                <p>
+                    It's done !!!!!!!!!!!!!!!!! This problem is solved.
+                </p>
+            </div>
         </div>
 
         <a href="javascript:;" class="up-btn" title="Lên đầu trang">
@@ -187,3 +208,4 @@
     </body>
 
 </html>
+
